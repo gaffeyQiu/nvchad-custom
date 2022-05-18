@@ -128,4 +128,11 @@ M.toggleterm = {
       },
    },
 }
+
+
+M.trouble = {
+  n = {
+    ["<leader>tr"] = {"<cmd> TroubleToggle<CR>", " toggle trouble"}
+  }
+}
 return M

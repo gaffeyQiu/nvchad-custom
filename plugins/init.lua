@@ -18,4 +18,15 @@ return {
          require("custom.plugins.lspsaga").setup()
       end,
    },
+
+   ["folke/trouble.nvim"] = {
+      after = "nvim-lspconfig",
+      config = function()
+        require("custom.plugins.trouble").setup()
+      end,
+   },
+
+   ["michaelb/sniprun"] = {
+     run = "bash ./install.sh"
+   }
 }
