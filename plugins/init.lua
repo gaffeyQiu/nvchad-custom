@@ -22,11 +22,32 @@ return {
    ["folke/trouble.nvim"] = {
       after = "nvim-lspconfig",
       config = function()
-        require("custom.plugins.trouble").setup()
+         require("custom.plugins.trouble").setup()
       end,
    },
 
    ["michaelb/sniprun"] = {
-     run = "bash ./install.sh"
-   }
+      run = "bash ./install.sh",
+   },
+
+   -- 缩进指示线
+   ["lukas-reineke/indent-blankline.nvim"] = {
+      config = function()
+         require("custom.plugins.indent-blankline").setup()
+      end,
+   },
+
+   -- 快速跳转
+   ["phaazon/hop.nvim"] = {
+      branch = "v1",
+      config = function()
+         require("hop").setup { keys = "etovxqpdygfblzhckisuran" }
+      end,
+   },
+   -- golang plugins
+   ["ray-x/go.nvim"] = {
+      config = function()
+         require("go").setup()
+      end,
+   },
 }

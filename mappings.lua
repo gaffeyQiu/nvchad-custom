@@ -8,6 +8,13 @@ toggle.setup()
 
 local M = {}
 
+-- M.disabled = {
+--   n = {
+--       ["<leader>h"] = "",
+--       ["<C-s>"] = ""
+--   }
+-- }
+
 M.general = {
 
    i = {},
@@ -24,6 +31,8 @@ M.general = {
       ["<C-Down>"] = { "<cmd> resize -2<CR>", "horizontal resize down" },
       ["<C-Up>"] = { "<cmd> resize +2<CR>", "horizontal resize up" },
       ["<C-=>"] = { "<C-w>=", "average windows" },
+
+      ["s"] = { "", "nop" },
    },
 
    t = {
@@ -65,9 +74,8 @@ M.lspconfig = {
          end,
          "   lsp hover",
       },
-      ["<leader>ra"] = {"<cmd> Lspsaga rename<CR>", " lsp rename"},
-      ["<leader>ca"] = {"<cmd> Lspsaga code_action<CR>", " lsp code action"},
-
+      ["<leader>ra"] = { "<cmd> Lspsaga rename<CR>", " lsp rename" },
+      ["<leader>ca"] = { "<cmd> Lspsaga code_action<CR>", " lsp code action" },
    },
 }
 
@@ -129,10 +137,51 @@ M.toggleterm = {
    },
 }
 
+M.comment = {
+
+   -- toggle comment in both modes
+   n = {
+      ["<C-_>"] = {
+         function()
+            require("Comment.api").toggle_current_linewise()
+         end,
+
+         "蘒  toggle comment",
+      },
+   },
+
+   v = {
+      ["<C-_>"] = {
+         "<ESC><cmd>lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<CR>",
+         "蘒  toggle comment",
+      },
+   },
+}
 
 M.trouble = {
-  n = {
-    ["<leader>tr"] = {"<cmd> TroubleToggle<CR>", " toggle trouble"}
-  }
+   n = {
+      ["<leader>tr"] = { "<cmd> TroubleToggle<CR>", " toggle trouble" },
+   },
 }
+
+M.hop = {
+   n = {
+      ["f"] = {
+         "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = false })<cr>",
+         "find char",
+      },
+      ["F"] = {
+         "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = false })<cr>",
+         "find char",
+      },
+   },
+}
+
+M.go = {
+   n = {
+      ["sf"] = { "<cmd> GoFillStruct<CR>", "auto fill struct" },
+      ["se"] = { "<cmd> GoIfErr<CR>", "auto fill if err != nil" },
+   },
+}
+
 return M
