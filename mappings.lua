@@ -2,10 +2,6 @@ local function termcodes(str)
    return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
 
--- 定义 toggleterm
-local toggle = require "custom.plugins.toggleterm"
-toggle.setup()
-
 local M = {}
 
 -- M.disabled = {
@@ -84,64 +80,6 @@ M.lspconfig = {
       ["<leader>rn"] = { "<cmd> Lspsaga rename<CR>", " lsp rename" },
       ["<leader>ca"] = { "<cmd> Lspsaga code_action<CR>", " lsp code action" },
       ["<leader>cs"] = {"<cmd> SymbolsOutline<CR>", " code symbols outline"},
-   },
-}
-
-M.toggleterm = {
-   n = {
-      ["<leader>tf"] = {
-         function()
-            require("custom.plugins.toggleterm").toggleF()
-         end,
-         "toggle float",
-      },
-      ["<leader>th"] = {
-         function()
-            toggle.toggleH()
-         end,
-         "toggle horizontal",
-      },
-
-      ["<leader>tv"] = {
-         function()
-            toggle.toggleV()
-         end,
-         "toggle vertical",
-      },
-      ["<leader>tg"] = {
-         function()
-            require("custom.plugins.toggleterm").toggleG()
-         end,
-         "toggle git",
-      },
-   },
-
-   t = {
-      ["<leader>tf"] = {
-         function()
-            require("custom.plugins.toggleterm").toggleF()
-         end,
-         "toggle float",
-      },
-      ["<leader>th"] = {
-         function()
-            toggle.toggleH()
-         end,
-         "toggle horizontal",
-      },
-
-      ["<leader>tv"] = {
-         function()
-            toggle.toggleV()
-         end,
-         "toggle vertical",
-      },
-      ["<leader>tg"] = {
-         function()
-            require("custom.plugins.toggleterm").toggleG()
-         end,
-         "toggle git",
-      },
    },
 }
 

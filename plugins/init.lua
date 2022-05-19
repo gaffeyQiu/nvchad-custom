@@ -7,8 +7,9 @@ return {
    },
 
    ["akinsho/toggleterm.nvim"] = {
+     tag = 'v1.*',
       config = function()
-         require("custom.plugins.toggleterm").setup()
+        require("custom.plugins.toggleterm")
       end,
    },
 
