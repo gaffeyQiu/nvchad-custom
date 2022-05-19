@@ -74,8 +74,16 @@ M.lspconfig = {
          end,
          "   lsp hover",
       },
-      ["<leader>ra"] = { "<cmd> Lspsaga rename<CR>", " lsp rename" },
+      ["gc"] = {
+         function()
+            vim.lsp.buf.incoming_calls()
+         end,
+      },
+      ["gi"] = {"<cmd> Trouble lsp_implementations", "lsp implementations"},
+      ["gr"] = {"<cmd> Trouble lsp_references<CR>", "lsp references"},
+      ["<leader>rn"] = { "<cmd> Lspsaga rename<CR>", " lsp rename" },
       ["<leader>ca"] = { "<cmd> Lspsaga code_action<CR>", " lsp code action" },
+      ["<leader>cs"] = {"<cmd> SymbolsOutline<CR>", " code symbols outline"},
    },
 }
 

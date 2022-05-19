@@ -7,7 +7,6 @@ local M = {}
 local override = require "custom.plugins.override"
 local userPlugins = require "custom.plugins"
 
-
 M.plugins = {
    options = {
       lspconfig = {
@@ -21,6 +20,11 @@ M.plugins = {
    user = userPlugins,
 }
 
+M.options = {
+   user = function()
+      require "custom.options"
+   end,
+}
 
 M.mappings = require "custom.mappings"
 

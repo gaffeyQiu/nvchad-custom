@@ -50,4 +50,16 @@ return {
          require("go").setup()
       end,
    },
+
+   -- debugger
+   ["rcarriga/nvim-dap-ui"] = {},
+   ["theHamsta/nvim-dap-virtual-text"] = {},
+
+   ["mfussenegger/nvim-dap"] = {
+      config = function()
+         require("custom.plugins.dap.dap-config")
+      end,
+   },
+
+   ["simrat39/symbols-outline.nvim"] = {}
 }
