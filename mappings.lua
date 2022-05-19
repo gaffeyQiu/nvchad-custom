@@ -127,6 +127,8 @@ M.go = {
    n = {
       ["sf"] = { "<cmd> GoFillStruct<CR>", "auto fill struct" },
       ["se"] = { "<cmd> GoIfErr<CR>", "auto fill if err != nil" },
+      ["st"] = { "<cmd> GoAddTag<CR>", "auto fill struct tag" },
+      ["sc"] = { "<cmd> GoClearTag<CR>", "auto clear struct tag" },
    },
 }
 
