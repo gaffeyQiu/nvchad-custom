@@ -52,6 +52,13 @@ return {
       end,
    },
 
+   -- rust-tool
+   ["simrat39/rust-tools.nvim"] = {
+       config = function ()
+         require('rust-tools').setup({})
+       end
+   },
+
    -- debugger
    ["rcarriga/nvim-dap-ui"] = {},
    ["theHamsta/nvim-dap-virtual-text"] = {},

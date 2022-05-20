@@ -75,6 +75,7 @@ M.lspconfig = {
             vim.lsp.buf.incoming_calls()
          end,
       },
+      ["gd"] = {"<cmd> Trouble lsp_definitions", "lsp definitions"},
       ["gi"] = {"<cmd> Trouble lsp_implementations", "lsp implementations"},
       ["gr"] = {"<cmd> Trouble lsp_references<CR>", "lsp references"},
       ["<leader>rn"] = { "<cmd> Lspsaga rename<CR>", " lsp rename" },

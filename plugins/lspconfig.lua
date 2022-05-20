@@ -3,13 +3,13 @@ local M = {}
 M.setup_lsp = function(attach, capabilities)
    local lspconfig = require "lspconfig"
 
-   local servers = { "html", "cssls", "bashls", "emmet_ls", "gopls", "clangd" }
+   local servers = { "html", "cssls", "bashls", "emmet_ls", "gopls", "clangd", "rust_analyzer"}
 
    for _, lsp in ipairs(servers) do
-      lspconfig[lsp].setup {
-         on_attach = attach,
-         capabilities = capabilities,
-      }
+            lspconfig[lsp].setup {
+             on_attach = attach,
+             capabilities = capabilities,
+            }
    end
 end
 
