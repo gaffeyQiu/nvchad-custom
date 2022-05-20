@@ -1,9 +1,7 @@
--- 缩进2个空格等于一个Tab
-vim.o.tabstop = 4
-vim.bo.tabstop = 4
-vim.o.softtabstop = 4
-vim.o.shiftround = true
+local opt = vim.opt
 
+-- 缩进4个空格等于一个Tab
+opt.shiftwidth = 4
 
 local map = vim.api.nvim_set_keymap
 local opt = {
