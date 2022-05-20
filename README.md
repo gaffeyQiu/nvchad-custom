@@ -2,9 +2,8 @@
 ### 使用方法
 1. cd ~/.config
 2. git clone https://github.com/NvChad/NvChad nvim
-3. cd ~/.config/nvim/lua
-4. git clone 本仓库
-5. nvim +PackerSync
+3. git clone git@github.com:gaffeyQiu/nvchad-custom.git ~/.config/nvim/lua/custom
+4. nvim +PackerSync
 
 ## 快捷键介绍
 ### 普通映射
