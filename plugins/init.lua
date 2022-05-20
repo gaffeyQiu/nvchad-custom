@@ -62,5 +62,11 @@ return {
       end,
    },
 
-   ["simrat39/symbols-outline.nvim"] = {}
+   ["simrat39/symbols-outline.nvim"] = {},
+
+   ["Pocco81/AutoSave.nvim"] = {
+       config = function ()
+        require("custom.plugins.autosave")
+       end
+   }
 }
